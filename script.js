@@ -1,15 +1,4 @@
 
-$("#sumbit-button").on("click",function(event){
-    event.preventDefault();
-  
-    var formName = $("#name-input").val().trim();
-    var formRole = $("#role-input").val().trim();
-    var formStartDate = $("#start-date").val().trim();
-    var formRate = $("#monthly-rate").val().trim();
-    
-})
-
-
 var config = {
   //From Chris Fernandes personal project on Firebase.
   apiKey: "AIzaSyDuLLYyag4uSszoGcosqr3idA_PmKEDsOE",
@@ -44,6 +33,14 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
     console.log("The read failed: " + errorObject.code);
   });
 
+  $("#sumbit-button").on("click",function(event){
+    event.preventDefault();
+  
+    var formName = $("#name-input").val().trim();
+    var formRole = $("#role-input").val().trim();
+    var formStartDate = $("#start-date").val().trim();
+    var formRate = $("#monthly-rate").val().trim();
+    
 
 
   // Save the new price in Firebase
@@ -53,3 +50,5 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
   }).then(function(){
    
   });
+
+})
