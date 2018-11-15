@@ -13,12 +13,10 @@ var config = {
 
 firebase.initializeApp(config);
 
-// Assign the reference to the database to a variable named 'database'
-// var database = ...
 var database = firebase.database();
 
-database.ref("EmployeeTracker/").on("value", function(snapshot) {
-    var databaseObject = snapshot.val();
+// database.ref("EmployeeTracker/").on("value", function(snapshot) {
+//     var databaseObject = snapshot.val();
 
    var tr = $("<tr>");
    tr.addClass("table table-striped");
@@ -46,12 +44,13 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
 
 
 
-    // If any errors are experienced, log them to console.
-}, function(errorObject) {
-    console.log("The read failed: " + errorObject.code);
-  });
+//     // If any errors are experienced, log them to console.
+// }, function(errorObject) {
+//     console.log("The read failed: " + errorObject.code);
+//   });
 
-  $("#sumbit-button").on("click",function(event){
+  $(".btn").on("click",function(event){
+      alert("button works")
     event.preventDefault();
   
     var formName = $("#name-input").val().trim();
@@ -61,7 +60,7 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
     
 
 
-  // Save the new price in Firebase
+  // Save the employee data in Firebase
   database.ref("EmployeeTracker/").set({
     databaseName : formName,
     databaseRole : formRole,
@@ -69,7 +68,7 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
     databaseRate : formRate
 
   }).then(function(){
-   
+        console.log("saved");
   });
 
 })
