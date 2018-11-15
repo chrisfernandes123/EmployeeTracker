@@ -43,7 +43,7 @@ tr.append(tdName);
 
 
 
-database.ref("EmployeeTracker/").on("value", function(snapshot) {
+database.ref("EmployeeTracker/").on("child_added", function(snapshot) {
     var databaseObject = snapshot.val();
 
    var tr = $("<tr>");
