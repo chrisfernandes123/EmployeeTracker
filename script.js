@@ -15,8 +15,8 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// database.ref("EmployeeTracker/").on("value", function(snapshot) {
-//     var databaseObject = snapshot.val();
+database.ref("EmployeeTracker/").on("value", function(snapshot) {
+    var databaseObject = snapshot.val();
 
    var tr = $("<tr>");
    tr.addClass("table table-striped");
@@ -24,6 +24,8 @@ var database = firebase.database();
    var tdRate = $("<td>");
    var tdRole = $("<td>");
    var tdDate = $("<td>");
+   var tdMonths = $("<td>");
+   var tdTotalWage = $("<td>");
    
 
     tdName.append(databaseObject.databaseName);
@@ -31,11 +33,21 @@ var database = firebase.database();
     tdRole.append(databaseObject.databaseRole);
     tdDate.append(databaseObject.databasedate);
 
+    var startDate = databaseObject.databasedate;
+
+    //Todays date
+    var endDate = new Date(); 
+    
+    var months = moment(new Date(endDate)).diff(new Date(startDate), 'months', true);
+    var monthsRounded = Math.round(months,2);
+
+    tdMonths.append(monthsRounded);
+
     tr.append(tdName);
     tr.append(tdRate);
     tr.append(tdRole);
     tr.append(tdDate);
-
+    tr.append(tdMonths);
 
 
 
@@ -44,10 +56,10 @@ var database = firebase.database();
 
 
 
-//     // If any errors are experienced, log them to console.
-// }, function(errorObject) {
-//     console.log("The read failed: " + errorObject.code);
-//   });
+    // If any errors are experienced, log them to console.
+}, function(errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
 
   $(".btn").on("click",function(event){
       alert("button works")
