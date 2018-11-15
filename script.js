@@ -15,8 +15,8 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// database.ref("EmployeeTracker/").on("value", function(snapshot) {
-//     var databaseObject = snapshot.val();
+database.ref("EmployeeTracker/").on("value", function(snapshot) {
+    var databaseObject = snapshot.val();
 
    var tr = $("<tr>");
    tr.addClass("table table-striped");
@@ -44,10 +44,10 @@ var database = firebase.database();
 
 
 
-//     // If any errors are experienced, log them to console.
-// }, function(errorObject) {
-//     console.log("The read failed: " + errorObject.code);
-//   });
+    // If any errors are experienced, log them to console.
+}, function(errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
 
   $(".btn").on("click",function(event){
     event.preventDefault();
