@@ -19,3 +19,20 @@ firebase.initializeApp(config);
 // Assign the reference to the database to a variable named 'database'
 // var database = ...
 var database = firebase.database();
+
+database.ref("EmployeeTracker/").on("value", function(snapshot) {
+    var databaseObject = snapshot.val();
+
+
+
+
+
+
+
+    
+
+
+    // If any errors are experienced, log them to console.
+}, function(errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
