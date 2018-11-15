@@ -71,38 +71,24 @@
     <div class="container middleSect">
       <div class="container">
         <div class="form-group row">
-          <label for="example-search-input">Search Term</label>
-
-          <input class="form-control" type="search" value="" id="example-search-input">
-
+          <label for="sel1">Employee Name</label>
+          <input class="form-control" type="number" min="1" max="10" step="1" value="" id="name-input">
+        </div>
+        <div class="form-group row">
+          <label for="example-search-input">Role</label>
+          <input class="form-control" type="search" value="" id="role-input">
         </div>
 
         <div class="form-group row">
-          <label for="sel1">Number of Records To Retrieve:</label>
-          <input class="form-control" type="number" min="1" max="10" step="1" value="" id="record-input">
+          <label for="example-number-input">Start Date</label>
+          <input class="form-control" type="number" min="1900" max="2019" step="1" value="" id="start-date">
         </div>
 
         <div class="form-group row">
-          <label for="example-number-input">Start Year(Optional)</label>
-          <input class="form-control" type="number" min="1900" max="2099" step="1" value="" id="start-year">
+          <label for="example-number-input">Monthly Rate</label>
+          <input class="form-control" type="number" min="50"  step="1" value="" id="monthly-rate">
         </div>
 
-        <div class="form-group row">
-          <label for="example-number-input">End Year(Optional)</label>
-          <input class="form-control" type="number" min="1900" max="2099" step="1" value="" id="end-year">
-        </div>
-        <div class="row">
-          <div class="col-md-1">
-            <button type="button" class="btn btn-default btn-sm">
-              <i class='fas fa-search' style='font-size:15px'></i> Search
-            </button>
-          </div>
-          <div class="col-md-1">
-            <button type="button" class="btn btn-default btn-sm">
-              <i class='fas fa-trash' style='font-size:15px'></i> Clear Results
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>
