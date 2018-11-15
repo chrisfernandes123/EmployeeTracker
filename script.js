@@ -1,7 +1,3 @@
-// Initialize Firebase
-// Make sure to match the configuration to the script version number in the HTML
-// (Ex. 3.0 != 3.7.0)
-src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"
 
 var config = {
   //From Chris Fernandes personal project on Firebase.
@@ -29,10 +25,20 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
 
 
 
-    
+
 
 
     // If any errors are experienced, log them to console.
 }, function(errorObject) {
     console.log("The read failed: " + errorObject.code);
+  });
+
+
+
+  // Save the new price in Firebase
+  database.ref("EmployeeTracker/").set({
+    
+
+  }).then(function(){
+   
   });
