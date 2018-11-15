@@ -106,7 +106,7 @@ database.ref("EmployeeTracker/").on("child_added", function(snapshot) {
 
 
   // Save the employee data in Firebase
-  database.ref("EmployeeTracker/").set({
+  database.ref("EmployeeTracker/").push({
     databaseName : formName,
     databaseRole : formRole,
     databasedate : formStartDate,
