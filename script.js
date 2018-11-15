@@ -62,7 +62,6 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
   });
 
   $(".btn").on("click",function(event){
-      alert("button works")
     event.preventDefault();
   
     var formName = $("#name-input").val().trim();
