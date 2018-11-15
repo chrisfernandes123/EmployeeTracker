@@ -8,6 +8,7 @@ var config = {
   storageBucket: "",
   messagingSenderId: "359506709188"
 
+
 };
 
 firebase.initializeApp(config);
@@ -17,11 +18,28 @@ var database = firebase.database();
 // database.ref("EmployeeTracker/").on("value", function(snapshot) {
 //     var databaseObject = snapshot.val();
 
+   var tr = $("<tr>");
+   tr.addClass("table table-striped");
+   var tdName = $("<td>");
+   var tdRate = $("<td>");
+   var tdRole = $("<td>");
+   var tdDate = $("<td>");
+   
+
+    tdName.append(databaseObject.databaseName);
+    tdRate.append(databaseObject.databaseRate);
+    tdRole.append(databaseObject.databaseRole);
+    tdDate.append(databaseObject.databasedate);
+
+    tr.append(tdName);
+    tr.append(tdRate);
+    tr.append(tdRole);
+    tr.append(tdDate);
 
 
 
 
-
+    $("#results").append(tr);
 
 
 
