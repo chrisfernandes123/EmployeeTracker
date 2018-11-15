@@ -15,6 +15,34 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+
+var tr = $("<tr>");
+tr.addClass("table table-striped");
+var tdName = $("<td>");
+var tdRate = $("<td>");
+var tdRole = $("<td>");
+var tdDate = $("<td>");
+var tdMonths = $("<td>");
+var tdMonthlyRate = $("<td>");
+
+tdName.html("Name");
+tdRate.html("Rate");
+tdRole.html("Role");
+tdDate.html("Start Date");
+tdMonths.html("Months");
+tdMonthlyRate.html("Monthly Rate");
+tr.append(tdName);
+ tr.append(tdRate);
+ tr.append(tdRole);
+ tr.append(tdDate);
+ tr.append(tdMonths);
+ tr.append(tdMonthlyRate);
+
+
+ $("#results").append(tr);
+
+
+
 database.ref("EmployeeTracker/").on("value", function(snapshot) {
     var databaseObject = snapshot.val();
 
