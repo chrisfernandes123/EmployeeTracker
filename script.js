@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 $("#sumbit-button").on("click",function(event){
     event.preventDefault();
   
@@ -8,11 +8,7 @@ $("#sumbit-button").on("click",function(event){
     var formRate = $("#monthly-rate").val().trim();
     
 })
-=======
-// Initialize Firebase
-// Make sure to match the configuration to the script version number in the HTML
-// (Ex. 3.0 != 3.7.0)
-src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"
+
 
 var config = {
   //From Chris Fernandes personal project on Firebase.
@@ -30,4 +26,30 @@ firebase.initializeApp(config);
 // Assign the reference to the database to a variable named 'database'
 // var database = ...
 var database = firebase.database();
->>>>>>> 62aac7edaca039c557e057e013f991f3780aa500
+
+database.ref("EmployeeTracker/").on("value", function(snapshot) {
+    var databaseObject = snapshot.val();
+
+
+
+
+
+
+
+
+
+
+    // If any errors are experienced, log them to console.
+}, function(errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
+
+
+
+  // Save the new price in Firebase
+  database.ref("EmployeeTracker/").set({
+    
+
+  }).then(function(){
+   
+  });
