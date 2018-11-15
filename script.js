@@ -25,7 +25,7 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
    var tdRole = $("<td>");
    var tdDate = $("<td>");
    var tdMonths = $("<td>");
-   var tdTotalWage = $("<td>");
+   var tdMonthlyRate = $("<td>");
    
 
     tdName.append(databaseObject.databaseName);
@@ -43,12 +43,18 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
 
     tdMonths.append(monthsRounded);
 
+    var monthlyRate = months * databaseObject.databaseRate;
+
+    var monthlyRateRounded = Math.round(monthlyRate,2);
+
+    tdMonthlyRate.append("$" + monthlyRateRounded);
+
     tr.append(tdName);
     tr.append(tdRate);
     tr.append(tdRole);
     tr.append(tdDate);
     tr.append(tdMonths);
-
+    tr.append(tdMonthlyRate);
 
 
     $("#results").append(tr);
