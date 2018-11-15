@@ -45,7 +45,10 @@ database.ref("EmployeeTracker/").on("value", function(snapshot) {
 
   // Save the new price in Firebase
   database.ref("EmployeeTracker/").set({
-    
+    databaseName : formName,
+    databaseRole : formRole,
+    databasedate : formStartDate,
+    databaseRate : formRate
 
   }).then(function(){
    
